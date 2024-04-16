@@ -1,16 +1,20 @@
 <script>
+
  export default{
-  name:'SingleCard'
+  name:'SingleCard',
+  props:{
+    cardInfo:Object
+  }
 }
 </script>
 
 <template>
     <div class="single-card">
          <div class="image">
-            <img src="https://images.ygoprodeck.com/images/cards_small/34541863.jpg" alt="">
+            <img :src="cardInfo.card_images[0].image_url_small" :alt="cardInfo.name">
          </div>
-         <div class="name white">nome</div>
-         <div class="archtype">Archetype</div>
+         <h3 class="name white">{{ cardInfo.name }}</h3>
+         <div class="archtype" >{{ cardInfo.archetype }}</div>
     </div>
 </template>
 
@@ -22,9 +26,16 @@
     background-color:$brand_primary;
     width:calc((100% / 5) - 20px) ;
     margin: 10px;
+    .image{
+       img{
+        width: 100%;
+        object-fit: cover;
+       }
+    }
     .name,
-    .archtype{
-      padding: 10px 0;
+    .archtype,
+    .image{
+     margin-bottom: 10px;
 
     }
     .white{

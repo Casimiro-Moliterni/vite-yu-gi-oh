@@ -15,10 +15,21 @@ export default{
     };
   },
   methods:{
-
+     generateApi(){
+      const queryParams = {
+        num : 20,
+        offset: 0
+      };
+         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+          params:queryParams
+         })
+         .then((response)=>{
+         store.cards= response.data.data;
+         })
+     }
   },
   mounted(){
-    console.log('ciao')
+    this.generateApi()
   }
 }
 </script>

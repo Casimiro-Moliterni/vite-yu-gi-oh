@@ -1,9 +1,15 @@
 <script>
-import SingleCard from './SingleCard.vue'
+import SingleCard from './SingleCard.vue';
+import {store} from '../store.js';
 export default{
     name:'CardList',
     components:{
         SingleCard
+    },
+    data(){
+        return{
+            store
+        }
     }
 }
 </script>
@@ -12,16 +18,7 @@ export default{
     <section class="card-list">
         <div class="container">
            <div class="wrapper-card">
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
-                <SingleCard></SingleCard>
+                <SingleCard v-for="card in store.cards" :key="card.id" :cardInfo="card"></SingleCard>
            </div>
         </div>
     </section>
