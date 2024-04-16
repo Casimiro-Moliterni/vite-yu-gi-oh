@@ -1,6 +1,10 @@
 <script>
+import SingleCard from './SingleCard.vue'
 export default{
-    name:'CardList'
+    name:'CardList',
+    components:{
+        SingleCard
+    }
 }
 </script>
 
@@ -8,7 +12,16 @@ export default{
     <section class="card-list">
         <div class="container">
            <div class="wrapper-card">
-
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
+                <SingleCard></SingleCard>
            </div>
         </div>
     </section>
