@@ -14,7 +14,7 @@
             <img :src="cardInfo.card_images[0].image_url_small" :alt="cardInfo.name">
          </div>
          <h3 class="name white">{{ cardInfo.name }}</h3>
-         <div class="archtype" >{{ cardInfo.archetype }}</div>
+         <div class="archetype" >{{ cardInfo.archetype }}</div>
     </div>
 </template>
 
@@ -33,13 +33,17 @@
        }
     }
     .name,
-    .archtype,
+    .archetype,
     .image{
      margin-bottom: 10px;
 
     }
     .white{
       color:white;
+    }
+    .archetype{
+      font-size: 20px;
+      font-weight: 700;
     }
   }
 </style>
